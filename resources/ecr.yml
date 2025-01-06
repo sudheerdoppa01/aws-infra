@@ -13,3 +13,10 @@ Resources:
       RepositoryName: my-ecr-repository-1
       ImageScanningConfiguration:
         scanOnPush: true
+
+  MyECRRepository2:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: my-ecr-repository-2
+      ImageScanningConfiguration:
+        scanOnPush: true
