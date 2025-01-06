@@ -23,14 +23,10 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_OIDC_ROLE_ARN }}
           aws-region: us-east-1
-      - name: Installing serverless
+      - name: Installing serverless frameworkVersion:3
         run: |
-          npm install -g serverless
-      - name: Set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
-        run: |
-          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
-          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
-      # - name: authenticating to AWS
-      #   run: sls config credentials --provider aws --key ${{ env.AWS_ACCESS_KEY_ID }} --secret ${{ env.AWS_SECRET_ACCESS_KEY }}
+          npm install -g serverless@3
+      - name: authenticating to AWS
+        run: sls config credentials --provider aws --key ${{ env.AWS_ACCESS_KEY_ID }} --secret ${{ env.AWS_SECRET_ACCESS_KEY }}
       - name: deploying infrastructure
         run: sls deploy --stage dev
