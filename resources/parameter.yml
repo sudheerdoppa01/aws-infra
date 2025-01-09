@@ -1,0 +1,9 @@
+---
+Resources:
+  BasicParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: email
+      Type: String
+      Value: doppa.sudheer@gmail.com
+      Description: SSM Parameter for running date command.
