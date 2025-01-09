@@ -7,11 +7,12 @@ provider:
   region: ${file(config/config.${opt:stage}.yml):region}
   deploymentPrefix: resource
 resources:
-  Conditions: 
-    IsProd: 
-      Fn::Equals: 
-        - ${opt:stage} 
-        - qa
   - ${file(./resources/ec2.yml)}
   - ${file(./resources/ecr.yml)}
   - ${file(./resources/parameter.yml)}
+  
+    Conditions: 
+      IsProd: 
+        Fn::Equals: 
+          - ${opt:stage} 
+          - qa
