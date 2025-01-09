@@ -22,7 +22,7 @@ Resources:
 
   MyEC2Instance2: 
     Type: AWS::EC2::Instance
-    Condition: IsProd
+    Condition: IsQA
     Properties: 
       ImageId: ${file(config/config.${opt:stage}.yml):ami}
       KeyName: ${file(config/config.${opt:stage}.yml):keyname}

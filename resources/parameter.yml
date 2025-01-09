@@ -10,7 +10,7 @@ Resources:
 
   BasicParameter1:
     Type: AWS::SSM::Parameter
-    Condition: IsProd
+    Condition: IsQA
     Properties:
       Name: sandhya_email
       Type: String

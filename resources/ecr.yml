@@ -9,7 +9,7 @@ Resources:
 
   MyECRRepository1:
     Type: AWS::ECR::Repository
-    Condition: IsProd
+    Condition: IsQA
     Properties:
       RepositoryName: my-ecr-repository-1
       ImageScanningConfiguration:
@@ -17,7 +17,7 @@ Resources:
 
   MyECRRepository2:
     Type: AWS::ECR::Repository
-    Condition: IsProd
+    Condition: IsQA
     Properties:
       RepositoryName: my-ecr-repository-2
       ImageScanningConfiguration:
