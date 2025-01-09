@@ -7,3 +7,11 @@ Resources:
       Type: String
       Value: doppa.sudheer@gmail.com
       Description: SSM Parameter for running date command.
+
+  BasicParameter1:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: sandhya_email
+      Type: String
+      Value: sandhya.muthyam@gmail.com
+      Description: SSM Parameter for running date command.
